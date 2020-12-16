@@ -75,7 +75,7 @@ table {
 	float:left;
 	width:100%;
 	border:1px solid red;
-	padding:15px;
+	padding:10px;
 }
 
 [class*="d-"]{
