@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <title>Daniel Jimenez Prats</title>
     <meta charset="UTF-8">
@@ -11,19 +11,25 @@
 </head>
 <body>
     <header class="header__container col-xs-12">
-        <article class="header__menuIcon col-xs-1">
-            <button><i class="fa fa-bars fa-2x"></i></button>
-        </article>
-        <article class="header__logo col-xs-2">
-            <img src="http://dummyimage.com/250x50/4d494d/686a82.gif&text=Daniel Jimenez" alt="Logo Gmail">
+        <article class="header__logo col-xs-3">
+            <img src="assets/img/PregueMail.png" alt="Logo Gmail" class="header__img">
         </article>
         <form action="">
-            <input type="search" placeholder="Search email" class="header__search col-xs-8">
+            <div class="header__emptyBox col-xs-9"></div>
+            <div class="header__searchDiv col-xs-8">
+                <!-- <i class="fa fa-search fa-lg"></i> -->
+                <input type="search" placeholder="Search email" class="header__search">
+            </div>
         </form>
-        <article class="header__user col-xs-1"></article>
+        <article class="header__user col-xs-1">
+            <a href="" class=""></a>
+        </article>
     </header>
     <aside class="aside__container col-xs-3">
-        <button class="aside__btn col-xs-12">Redactar</button>
+        <button class="aside__btn col-xs-6">
+            <i class="fa fa-plus fa-2x plus"></i>
+            <p class="aside_text">Compose</p>
+        </button>
         <section class="aside__sections col-xs-12">
             <ul class="aside__sectionList">
                 <li class="section__categories col-xs-12">Inbox</li>

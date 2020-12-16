@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+/* Montserrat Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
 /* ==================== GRID BOOSTRAP STYLE CSS AREA ==================== */
 
 /*Estils genèrics de qualsevol projecte*/
@@ -168,3 +172,95 @@ smaller tablets @ 600 or @ 640 wide.*/
 
 /* hi-res laptops and desktops */
 @media (min-width:1281px) {}
+
+/* =============================== STYLES CSS AREA =============================== */
+
+/* header */
+header{}
+header figure{}
+header figure img{}
+header nav{}
+header nav ul{}
+header nav li{}
+header video{}
+
+.header__img{
+    width: 350px;
+    height: 70px;
+    /* margin-left: 13em; */
+    /* border: 1px solid red; */
+}
+
+.header__emptyBox{
+    padding: 10px;
+}
+
+.header__searchDiv{
+    /* background-color: rgba(206,206,206,0.2); */
+}
+
+.header__search{
+    width: 100%;
+    border: none;
+    padding: 13px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: rgba(200,200,200,0.2);
+}
+
+/* main */
+main section{}
+main section img{}
+main section p{}
+main article{}
+main article img{}
+main figure img{}
+main li{}
+main article p{}
+main article {}
+
+/* aside */
+aside{}
+aside section{}
+aside figure{}
+aside figure img{}
+aside ul{}
+aside li{}
+
+.plus{
+    margin: auto 10px 30px;
+    color: rgb(138, 37, 211);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+.aside__text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.aside__btn{
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+    align-items: center;
+    background-color: #fff;
+    /* border: none; */
+    border-radius: 24px;
+    color: #3c4043;
+    display: inline-flex;
+    height: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.aside__btn:hover{
+    box-shadow: 1px 1px 20px rgb(200,200,200);
+    background-color: rgba(190,180,170,0.1);
+}
+.aside__btn:focus{
+    background-color: rgba(190,180,170,0.5);
+    border: none;
+    text-decoration: none;
+}
