@@ -78,7 +78,7 @@ table {
 [class*="col-"]{
 	float:left;
 	width:100%;
-	/* border:1px solid red; */
+	border:1px solid red;
 	padding:10px;
 }
 
@@ -233,6 +233,14 @@ main article {}
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
 }
 
+.texto{
+    font-weight: 600;
+    padding: 20px 0;
+    margin: 0 10px;
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    /* border: 1px solid red; */
+}
 /* aside */
 aside{
     /* background-color: hotpink; */
