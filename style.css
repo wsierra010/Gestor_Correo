@@ -78,7 +78,7 @@ table {
 [class*="col-"]{
 	float:left;
 	width:100%;
-	border:1px solid red;
+	/* border:1px solid red; */
 	padding:10px;
 }
 
@@ -176,7 +176,9 @@ smaller tablets @ 600 or @ 640 wide.*/
 /* =============================== STYLES CSS AREA =============================== */
 
 /* header */
-header{}
+header{
+    border-bottom: 1px solid rgba(87, 87, 87, 0.5);
+}
 header figure{}
 header figure img{}
 header nav{}
@@ -186,13 +188,13 @@ header video{}
 
 .header__img{
     width: 350px;
-    height: 70px;
+    height: 40px;
     /* margin-left: 13em; */
     /* border: 1px solid red; */
 }
 
 .header__emptyBox{
-    padding: 10px;
+    padding: 1px;
 }
 
 .header__searchDiv{
@@ -202,7 +204,7 @@ header video{}
 .header__search{
     width: 100%;
     border: none;
-    padding: 13px;
+    padding: 10px;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -221,16 +223,35 @@ main li{}
 main article p{}
 main article {}
 
+.main__container{
+    border-bottom: 1px solid rgba(87, 87, 87, 0.5);
+    padding: 1px;
+    min-height: 600px;
+}
+.main__tools{
+    padding: 1px;
+    border-bottom: 1px solid rgba(87, 87, 87, 0.5);
+}
+
 /* aside */
-aside{}
+aside{
+    /* background-color: hotpink; */
+    min-height: 600px;
+    border-right: 1px solid rgba(87, 87, 87, 0.5);
+    border-bottom: 1px solid rgba(87, 87, 87, 0.5);
+}
 aside section{}
 aside figure{}
 aside figure img{}
 aside ul{}
-aside li{}
+.aside__sectionList li a{
+    text-decoration: none;
+    color: rgba(60,64,67,1);
+}
 
 .plus{
-    margin: auto 10px 30px;
+    align-items: center;
+    margin: 0 15px;
     color: rgb(138, 37, 211);
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -243,13 +264,14 @@ aside li{}
 .aside__btn{
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
     align-items: center;
-    background-color: #fff;
-    /* border: none; */
+    background-color: #ffffff;
+    border: none;
     border-radius: 24px;
     color: #3c4043;
     display: inline-flex;
     height: 50px;
-    margin-bottom: 10px;
+    padding: 5px 0;
+    margin: 15px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -260,7 +282,28 @@ aside li{}
     background-color: rgba(190,180,170,0.1);
 }
 .aside__btn:focus{
-    background-color: rgba(190,180,170,0.5);
     border: none;
     text-decoration: none;
+    outline: none;
+}
+
+.aside__sections{
+    /* background-color: rgba(200,200,200,0.2); */
+}
+.section__categories{
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.aside__sectionList li{
+    /* display: block; */
+}
+.aside__sectionList li:focus ul{display:block;}
+
+.aside__sectionList li:hover{
+    background-color: rgba(212, 212, 216,0.3);
+    box-shadow: 4px 4px 15px grey;
+    border-radius: 0 25px 25px 0px;
+    cursor: pointer;
 }
