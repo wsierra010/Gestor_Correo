@@ -210,6 +210,22 @@ header{
     box-shadow: 3px 3px 5px rgba(87, 87, 87,0.3);
 }
 
+.star {
+    visibility:hidden;
+    /* display: none; */
+    font-size:25px;
+    color: rgba(87, 87, 87, 0.5);
+    cursor:pointer;
+}.star:before {
+    content: "\2605";
+    visibility:visible;
+    position: absolute;
+
+}
+.star:checked:before {
+    content: "\2606";
+}
+
 .text{
     font-weight: 600;
     margin: 0 10px;

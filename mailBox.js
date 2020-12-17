@@ -13,10 +13,10 @@ mails.appendChild(mailArticle);
 
 // Create content in mailArticle
 const checkBox = document.createElement('input');
-const star = document.createElement('input');
+const star = document.createElement('');
 const fixed = document.createElement('input');
-const titleArticle = document.createElement('h2');
-const paragraphArticle = document.createElement('p');
+// const titleArticle = document.createElement('h2');
+// const paragraphArticle = document.createElement('p');
 
 // checkbox
 checkBox.setAttribute('type','checkbox');
@@ -24,6 +24,8 @@ checkBox.setAttribute('id','checked');
 // star favorites checkbox
 star.setAttribute('type','checkbox');
 star.setAttribute('id','favorites');
+star.setAttribute('checked','true');
+star.classList.add('star');
 // fixed checkbox
 fixed.setAttribute('type','checkbox');
 fixed.setAttribute('id','fixed');
@@ -43,10 +45,3 @@ mailArticle.appendChild(titleArticle);
 mailArticle.appendChild(paragraphArticle);
 
 
-console.log(mailArticle);
-
-function pruebas(){
-    for(i=0; i<50; i++){
-        mailArticle.innerHTML;
-    }
-}
