@@ -233,6 +233,24 @@ main article {}
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
 }
 
+.main__mailArticle{
+    border: 1px solid rgba(87, 87, 87,0.2);
+    padding: 20px 0;
+    border-top: none;
+
+}
+.main__mailArticle:hover{
+    box-shadow: 3px 3px 5px rgba(87, 87, 87,0.3);
+}
+
+.text{
+    font-weight: 600;
+    margin: 0 10px;
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 /* aside */
 aside{
     /* background-color: hotpink; */
