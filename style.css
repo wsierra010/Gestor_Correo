@@ -56,24 +56,6 @@ table {
 /*Estils genèrics de qualsevol projecte*/
 *{box-sizing:border-box;}
 
-.clear{clear:both;}
-
-.container{
-	width:100%;
-	max-width:1080px;
-	margin:0 auto;
-	position:relative;
-}
-
-.container-fluid{
-	width:100%;
-	float:left;
-}
-
-.row{
-	clear:both;
-}
-
 /* Sistema 12 columnes */
 [class*="col-"]{
 	float:left;
@@ -179,12 +161,6 @@ smaller tablets @ 600 or @ 640 wide.*/
 header{
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
 }
-header figure{}
-header figure img{}
-header nav{}
-header nav ul{}
-header nav li{}
-header video{}
 
 .header__img{
     width: 350px;
@@ -213,15 +189,6 @@ header video{}
 }
 
 /* main */
-main section{}
-main section img{}
-main section p{}
-main article{}
-main article img{}
-main figure img{}
-main li{}
-main article p{}
-main article {}
 
 .main__container{
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
@@ -258,10 +225,6 @@ aside{
     border-right: 1px solid rgba(87, 87, 87, 0.5);
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
 }
-aside section{}
-aside figure{}
-aside figure img{}
-aside ul{}
 .aside__sectionList li a{
     text-decoration: none;
     color: rgba(60,64,67,1);
