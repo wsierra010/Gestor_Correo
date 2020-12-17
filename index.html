@@ -1,53 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <title>Daniel Jimenez Prats</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
 <body>
     <header class="header__container col-xs-12">
-        <article class="header__menuIcon col-xs-1">
-            <button><i class="fa fa-bars fa-2x"></i></button>
-        </article>
-        <article class="header__logo col-xs-2">
-            <img src="http://dummyimage.com/250x50/4d494d/686a82.gif&text=Daniel Jimenez" alt="Logo Gmail">
+        <article class="header__logo col-xs-3">
+            <img src="assets/img/PregueMail.png" alt="Logo Gmail" class="header__img">
         </article>
         <form action="">
-            <input type="search" placeholder="Search email" class="header__search col-xs-8">
+            <div class="header__emptyBox col-xs-9"></div>
+            <div class="header__searchDiv col-xs-8">
+                <!-- <i class="fa fa-search fa-lg"></i> -->
+                <input type="search" placeholder="Search email" class="header__search">
+            </div>
         </form>
-        <article class="header__user col-xs-1"></article>
+        <article class="header__user col-xs-1">
+            <a href="" class=""></a>
+        </article>
     </header>
-    <aside class="aside__container col-xs-3">
-        <button class="aside__btn col-xs-12">Redactar</button>
+    <aside class="aside__container col-xs-2">
+        <button class="aside__btn col-xs-8">
+            <i class="fa fa-plus fa-2x plus"></i>
+            <p class="aside_text">Compose</p>
+        </button>
         <section class="aside__sections col-xs-12">
             <ul class="aside__sectionList">
-                <li class="section__categories col-xs-12">Inbox</li>
-                <li class="section__categories col-xs-12">Starred</li>
-                <li class="section__categories col-xs-12">Snoozed</li>
-                <li class="section__categories col-xs-12">Important</li>
-                <li class="section__categories col-xs-12">Sent</li>
-                <li class="section__categories col-xs-12">Drafts</li>
-                <li class="section__categories col-xs-12">Categories
-                    <ul>
-                        <li class="col-xs-2"></li>
-                        <li class="col-xs-10">Social</li>
-                        <li class="col-xs-2"></li>
-                        <li class="col-xs-10">Updates</li>
-                        <li class="col-xs-2"></li>
-                        <li class="col-xs-10">Promotions</li>
-                        <li class="col-xs-2"></li>
-                        <li class="col-xs-10">Chats</li>
-                    </ul>
+                <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fa fa-inbox"></i>
+                        <span class="section__spanText">Inbox</span>
+                    </a>
                 </li>
+                <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fa fa-star"></i>    
+                        <span class="section__spanText">Starred</span>
+                    </a>
+                </li>
+                <li class="section__categories col-xs-12">
+                    <a href="">  
+                        <i class="fas fa-clock"></i>
+                        <span class="section__spanText">Snoozed</span>
+                    </a>
+                </li>
+                <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fas fa-tag"></i>
+                        <span class="section__spanText">Important</span>
+                    </a>
+                </li>
+                <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="section__spanText">Sent</span>
+                    </a>
+                </li>
+                <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fas fa-file"></i>
+                        <span class="section__spanText">Drafts</span>
+                    </a>
+                </li>
+                <!-- <li class="section__categories col-xs-12">
+                    <a href="">
+                        <i class="fas fa-folder"></i>
+                        <span class="section__spanText">categories</span>
+                    </a>
+                    <ul>
+                        <li class="col-xs-12">Social</li>
+                        <li class="col-xs-12">Updates</li>
+                        <li class="col-xs-12">Promotions</li>
+                        <li class="col-xs-12">Chats</li>
+                    </ul>
+                </li> -->
             </ul>
         </section>
     </aside>
-    <main class="main__container col-xs-9">
+    <main class="main__container col-xs-10">
         <section class="main__tools col-xs-12">
             <article class="main__checkbox col-xs-1">
                 <input type="checkbox">
@@ -59,20 +94,11 @@
                 <a href="" class=""><i class="fa fa-chevron-right"></i></a>
             </article>
         </section>
-        <section class="main__mails">
-            <ul>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-                <li class="col-xs-12">Correos Electronicos :D</li>
-            </ul>
+        <section class="main__mails" id="mailbox">
+           
         </section>
     </main>
+
+    <script src="/mailBox.js"></script>
 </body>
 </html>
