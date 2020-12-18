@@ -43,5 +43,3 @@ mailArticle.appendChild(star);
 mailArticle.appendChild(fixed);
 mailArticle.appendChild(titleArticle);
 mailArticle.appendChild(paragraphArticle);
-
-
