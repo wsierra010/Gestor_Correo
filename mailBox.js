@@ -1,61 +1,74 @@
 const mails = document.getElementById('mailbox');
-const mailArticle = document.createElement('article');
 const mainContainer = document.getElementById('main__container')
 // Array para guardar todos los correos
 
 
 
-// Create Article in MailBox
-mailArticle.setAttribute('id','mail');
-mailArticle.classList.add('main__mailArticle');
-mailArticle.classList.add('col-xs-12');
+function articleMail(to, subject, textcontent){
+    const mailArticle = document.createElement('article');
+    // Create Article in MailBox
+    mailArticle.setAttribute('id','mail');
+    mailArticle.classList.add('main__mailArticle');
+    mailArticle.classList.add('col-xs-12');
 
-// Add this Article in Section mailbox
-// mails.appendChild(mailArticle);
+    // Add this Article in Section mailbox
+    // mails.appendChild(mailArticle);
 
-// Create content in mailArticle
-const checkboxes = document.createElement('figure');
-const checkBox = document.createElement('input');
-const star = document.createElement('input');
-const fixed = document.createElement('input');
-const toTitle = document.createElement('figure');
-const subjectMain = document.createElement('figure');
-const textareaFooter = document.createElement('figure');
+    // Create content in mailArticle
+    const checkboxes = document.createElement('figure');
+    const checkBox = document.createElement('input');
+    const star = document.createElement('input');
+    const fixed = document.createElement('input');
+    const toTitle = document.createElement('figure');
+    const subjectMain = document.createElement('figure');
+    const textareaFooter = document.createElement('figure');
 
-// Add classes in checkboxes figure
-checkboxes.setAttribute('class','col-xs-1');
-
-// checkbox
-checkBox.setAttribute('type','checkbox');
-checkBox.setAttribute('id','checked');
-// star favorites checkbox
-star.setAttribute('type','checkbox');
-star.setAttribute('id','favorites');
-star.setAttribute('checked','true');
-star.classList.add('star');
-// fixed checkbox
-fixed.setAttribute('type','checkbox');
-fixed.setAttribute('id','fixed');
-
-
-// Clases and Atributtes in Mails Content
-toTitle.setAttribute('id','first');
-toTitle.setAttribute('class','col-xs-3');
-subjectMain.setAttribute('id','second');
-subjectMain.setAttribute('class','col-xs-3');
-textareaFooter.setAttribute('id','third');
-textareaFooter.setAttribute('class','col-xs-5');
-
-// Add content in Article
-checkboxes.appendChild(checkBox);
-checkboxes.appendChild(star);
-checkboxes.appendChild(fixed);
-mailArticle.appendChild(checkboxes);
-mailArticle.appendChild(toTitle);
-mailArticle.appendChild(subjectMain);
-mailArticle.appendChild(textareaFooter);
+    // Add classes in checkboxes figure
+    checkboxes.setAttribute('class','col-xs-1');
+    // checkbox
+    checkBox.setAttribute('type','checkbox');
+    checkBox.setAttribute('id','checked');
+    // star favorites checkbox
+    star.setAttribute('type','checkbox');
+    star.setAttribute('id','favorites');
+    star.setAttribute('checked','true');
+    star.classList.add('star');
+    // fixed checkbox
+    fixed.setAttribute('type','checkbox');
+    fixed.setAttribute('id','fixed');
 
 
+    // Clases and Atributtes in Mails Content
+    toTitle.setAttribute('id','first');
+    toTitle.setAttribute('class','col-xs-3');
+    subjectMain.setAttribute('id','second');
+    subjectMain.setAttribute('class','col-xs-3');
+    textareaFooter.setAttribute('id','third');
+    textareaFooter.setAttribute('class','col-xs-5');
+
+    // Add content in Article
+    checkboxes.appendChild(checkBox);
+    checkboxes.appendChild(star);
+    checkboxes.appendChild(fixed);
+    mailArticle.appendChild(checkboxes);
+    mailArticle.appendChild(toTitle);
+    mailArticle.appendChild(subjectMain);
+    mailArticle.appendChild(textareaFooter);
+
+    toTitle.innerHTML = to;
+    subjectMain.innerHTML = subject;
+    textareaFooter.innerHTML = textcontent;
+
+
+    return mailArticle;
+}
+
+
+
+
+// Create Modal window compose
+
+let ContMailBox = [];
 const CreateModal = document.getElementById('compose');
 
 CreateModal.addEventListener('click', createCompose);
@@ -77,6 +90,7 @@ function createCompose(){
     window.appendChild(sentCompose);
 
     // Add elements in headerCompose
+    sentCompose.setAttribute('id','exit');
     let paraf = document.createElement('p');
     let icon = document.createElement('i');
     paraf.textContent = "New Message";
@@ -118,6 +132,15 @@ function createCompose(){
     mainContainer.appendChild(window);
 
 
+
+
+    const close = document.getElementById('close');
+    close.addEventListener('click', exit);
+
+    function exit(){
+        window.remove();
+    }
+
     const sendButton = document.getElementById('send');
     sendButton.addEventListener('click', Mail);
 
@@ -127,30 +150,36 @@ function createCompose(){
         const subjectInput = document.getElementById('subjectInput').value;
         const textareaInput = document.getElementById('textareaInput').value;
 
-            MailContent={
+        MailContent={
             to: toInput,
             subject: subjectInput,
             textcontent: textareaInput
         }
-        console.log(MailContent);
+        // console.log(MailContent);
 
-        let ContMailBox = [];
         capturar();
 
         function capturar(){
             // console.log('Dani Jimenez Maquina')
             ContMailBox.push(MailContent);
         }
-        console.log(ContMailBox);
+        // console.log(ContMailBox);
 
         let first = document.getElementById('first');
         let second = document.getElementById('second');
         let third = document.getElementById('third');
 
-        first.innerHTML += MailContent.to;
-        second.innerHTML += MailContent.subject;
-        third.innerHTML += MailContent.textcontent;
+        window.remove();
+        mails.innerHTML = "";
+        ContMailBox.forEach(e => {
+            console.log(e.textcontent, e.subject, e.to);
+            let variable = articleMail(e.to, e.subject, e.textcontent);
+            mails.appendChild(variable);
+            console.log(variable);
+        });
     }
+
+
 }
 
 

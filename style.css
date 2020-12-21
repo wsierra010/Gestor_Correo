@@ -60,7 +60,7 @@ table {
 [class*="col-"]{
 	float:left;
 	width:100%;
-	border:1px solid red;
+	/* border:1px solid red; */
 	padding:10px;
 }
 
@@ -163,7 +163,7 @@ header{
 }
 
 .header__img{
-    width: 350px;
+    width: 100%;
     height: 40px;
     /* margin-left: 13em; */
     /* border: 1px solid red; */
@@ -205,17 +205,16 @@ header{
 
 .main__mailArticle{
     border: 1px solid rgba(87, 87, 87,0.2);
-    padding: 20px 0;
+    padding: 5px 0;
     border-top: none;
     flex-direction: column;
-
 }
 .main__mailArticle:hover{
     box-shadow: 3px 3px 5px rgba(87, 87, 87,0.3);
 }
 
 .star {
-    visibility:hidden;
+    /* visibility:hidden; */
     /* display: none; */
     font-size:25px;
     color: rgba(87, 87, 87, 0.5);
@@ -224,7 +223,6 @@ header{
     content: "\2605";
     visibility:visible;
     position: absolute;
-
 }
 .star:checked:before {
     content: "\2606";
@@ -237,48 +235,70 @@ header{
     font-family: 'Montserrat', sans-serif;
 }
 
+#first{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+#second{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+#third{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(99, 98, 97);
+    overflow: hidden;
+    height: 35px;
+}
+
 /*          VENTANA MODAL CSS STYLES AREA            */
 .modal{
-    width: 400px;
-    /* height: 500px; */
+    width: 450px;
+    height: 29.45em;
     /* background-color: blue; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(190,180,170,0.7);
 }
 .headerCompose{
     background-color: rgb(77, 77, 84);
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    min-height: 2em;
+    min-height: 3em;
+    border-radius: 10px 10px 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .textTitle{
-    margin: 7px 10px 0;
+    margin: 15px 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
 }
 .cross{
-    margin: 7px 8px;
+    margin: 15px 10px;
     cursor: pointer;
 }
-.cross:focus{
-    display: none;
 }
 .toInput{
-    height: 3em;
+    height: 3.5em;
     border: none;
     border-bottom: 1px solid rgba(190,180,170,0.3);
     outline: none;
 }
 .subjectInput{
-    height: 3em;
+    height: 3.5em;
     border: none;
     border-bottom: 1px solid rgba(190,180,170,0.3);
     outline: none;
 }
 .textareaCompose{
-    height: 20em;
+    height: 21em;
     resize: none;
     outline: none;
     border: none;
@@ -288,7 +308,7 @@ header{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     width: 8em;
-    margin: 5px 0 0;
+    margin: 5px 15px 0;
     height: 2.5em;
     border: none;
     border-radius: 3px;
@@ -312,10 +332,12 @@ aside{
     color: rgb(138, 37, 211);
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    /* width: 50%; */
 }
 .aside__text{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
+    /* width: 50%; */
 }
 
 .aside__btn{
@@ -345,7 +367,7 @@ aside{
 }
 
 .aside__sections{
-    /* background-color: rgba(200,200,200,0.2); */
+    padding: 3px;
 }
 .section__categories{
     padding: 10px 0;
