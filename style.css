@@ -269,6 +269,25 @@ header{
     overflow: hidden;
     height: 35px;
 }
+.h1Title{margin: 35px 0 0 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+.spaceDiv{
+    height: 100px;
+}
+.paragraphText{
+    margin: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    /* justify-content: space-around; */
+}
+.imgMainMail{
+    margin: 10px 20px;
+    width: 900px;
+    height: 300px;
+}
 
 /*          VENTANA MODAL CSS STYLES AREA            */
 .modal{
