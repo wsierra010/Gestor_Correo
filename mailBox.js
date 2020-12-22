@@ -15,6 +15,7 @@ function articleMail(to, subject, textcontent, id){
     mailArticle.setAttribute('id','mail');
     mailArticle.classList.add('main__mailArticle');
     mailArticle.classList.add('col-xs-12');
+    mailArticle.addEventListener('click', focusMail);
 
     // Create content in mailArticle
     const checkboxes = document.createElement('figure');
@@ -35,9 +36,10 @@ function articleMail(to, subject, textcontent, id){
         checkBox.addEventListener('click', deletMail);
         // star favorites checkbox
         star.setAttribute('type','checkbox');
-        star.setAttribute('id','favorites');
+        star.setAttribute('class','favorites');
         star.setAttribute('checked','true');
         star.classList.add('star');
+        // star.addEventListener('click', );
         // fixed checkbox
         fixed.setAttribute('type','checkbox');
         fixed.setAttribute('id','fixed');
@@ -122,7 +124,7 @@ function createCompose(){
 
     // Button send
     let name = document.createElement('p');
-    name.textContent = "Send"
+    name.textContent = "Send";
     sentCompose.appendChild(name);
     sentCompose.classList.add('sendButton');
     sentCompose.setAttribute('id','send');
@@ -161,7 +163,7 @@ function createCompose(){
             textcontent: textareaInput
         }
         capturar();
-        saveLocalStorage();
+        saveMailLocalStorage();
         // console.log(MailContent);
 
         // Function push object in ContMail Box Array
@@ -182,7 +184,7 @@ function createCompose(){
         // console.log('Dani Jimenez Maquina')
         ContMailBox.push(MailContent);
     }
-}           //          Finally Function Create Compose
+}                                                                            //          Finally Function Create Compose
 
 
 function printMail(){
@@ -197,7 +199,12 @@ function printMail(){
     });
 }
 
-function saveLocalStorage(){
+function focusMail(){
+    mails.innerHTML = "";
+    MailHtml();
+}
+
+function saveMailLocalStorage(){
     let json = JSON.stringify(ContMailBox);
 
     localStorage.setItem('mails', json);
@@ -224,11 +231,66 @@ function deletMail(event){
         }
     });
     printMail();
-    saveLocalStorage();
+    saveMailLocalStorage();
 }
 
+function MailHtml(){
+    const divHeader = document.createElement('div');
+    const headerMail = document.createElement('section');
+    const divMail = document.createElement('div');
+    const mainMail = document.createElement('section');
+    const footerMail = document.createElement('section');
 
+    divHeader.classList.add('divHeader');
+    mails.appendChild(divHeader);
 
+    // Header Mail HTML AREA
 
+    const titleMail = document.createElement('h1');
+    titleMail.textContent='Assembler School of Software Engineer';
+    titleMail.classList.add('h1Title');
+    headerMail.appendChild(titleMail);
+    mails.appendChild(headerMail);
 
+    divMail.classList.add('spaceDiv');
+    mails.appendChild(divMail);
 
+    // Main Mail HTML AREA
+
+    const textMail = document.createElement('figure');
+    // First paragraph
+    const pMail = document.createElement('p');
+    pMail.textContent='Lorem ipsum dolor sit amet consectetur adipiscing elit, orci hac pretium sagittis venenatis semper sed sodales, inceptos sapien vulputate consequat dui metus. Torquent faucibus per ullamcorper nam imperdiet hendrerit ultricies montes sociosqu, habitasse a ornare urna turpis molestie himenaeos eros placerat luctus, quis posuere commodo felis varius lobortis nisl odio.'
+    pMail.classList.add('paragraphText');
+    // First Image
+    const imgMail = document.createElement('img');
+    imgMail.setAttribute('src','/assets/img/landscape-1.jpg');
+    imgMail.setAttribute('alt','landscape');
+    imgMail.classList.add('imgMainMail');
+    // Second paragraph
+    const p2Mail = document.createElement('p');
+    p2Mail.textContent = 'Lorem ipsum dolor sit amet consectetur adipiscing elit, orci hac pretium sagittis venenatis semper sed sodales, inceptos sapien vulputate consequat dui metus. Torquent faucibus per ullamcorper nam imperdiet hendrerit ultricies montes sociosqu, habitasse a ornare urna turpis molestie himenaeos eros placerat luctus, quis posuere commodo felis varius lobortis nisl odio.'
+    p2Mail.classList.add('paragraphText');
+    // Second Image
+    const img2Mail = document.createElement('img');
+    img2Mail.setAttribute('src','/assets/img/landscape-2.jpg');
+    img2Mail.setAttribute('alt','landscape-2');
+    img2Mail.classList.add('imgMainMail');
+
+    mainMail.appendChild(textMail);
+    mainMail.appendChild(pMail);
+    mainMail.appendChild(imgMail);
+    mainMail.appendChild(p2Mail);
+    mainMail.appendChild(img2Mail);
+
+    mails.appendChild(mainMail);
+
+    // Footer Mail AREA
+
+    const divFooter = document.createElement('div');
+    divFooter.classList.add('divFooter');
+
+    footerMail.appendChild(divFooter);
+
+    mails.appendChild(footerMail);
+}
