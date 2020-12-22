@@ -235,12 +235,17 @@ function deletMail(event){
 }
 
 function MailHtml(){
+    const divHeader = document.createElement('div');
     const headerMail = document.createElement('section');
     const divMail = document.createElement('div');
     const mainMail = document.createElement('section');
     const footerMail = document.createElement('section');
 
+    divHeader.classList.add('divHeader');
+    mails.appendChild(divHeader);
+
     // Header Mail HTML AREA
+
     const titleMail = document.createElement('h1');
     titleMail.textContent='Assembler School of Software Engineer';
     titleMail.classList.add('h1Title');
@@ -251,6 +256,7 @@ function MailHtml(){
     mails.appendChild(divMail);
 
     // Main Mail HTML AREA
+
     const textMail = document.createElement('figure');
     // First paragraph
     const pMail = document.createElement('p');
@@ -278,4 +284,13 @@ function MailHtml(){
     mainMail.appendChild(img2Mail);
 
     mails.appendChild(mainMail);
+
+    // Footer Mail AREA
+
+    const divFooter = document.createElement('div');
+    divFooter.classList.add('divFooter');
+
+    footerMail.appendChild(divFooter);
+
+    mails.appendChild(footerMail);
 }
