@@ -294,3 +294,12 @@ function MailHtml(){
 
     mails.appendChild(footerMail);
 }
+
+const start = document.getElementById('startPage');
+const inbox = document.getElementById('InboxPage');
+inbox.addEventListener('click', startedPage);
+start.addEventListener('click', startedPage);
+
+function startedPage(){
+    printMail();
+}
