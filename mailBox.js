@@ -15,17 +15,20 @@ function articleMail(to, subject, textcontent, id){
     mailArticle.setAttribute('id','mail');
     mailArticle.classList.add('main__mailArticle');
     mailArticle.classList.add('col-xs-12');
-    mailArticle.addEventListener('click', focusMail);
 
     // Create content in mailArticle
     const checkboxes = document.createElement('figure');
-        const checkBox = document.createElement('input');
-        const star = document.createElement('input');
-        const fixed = document.createElement('input');
+    const checkBox = document.createElement('input');
+    const star = document.createElement('input');
+    const fixed = document.createElement('input');
     // Create figures for put the information mails
     const toTitle = document.createElement('figure');
     const subjectMain = document.createElement('figure');
     const textareaFooter = document.createElement('figure');
+
+    toTitle.addEventListener('click', focusMail);
+    subjectMain.addEventListener('click', focusMail);
+    textareaFooter.addEventListener('click', focusMail);
 
     // Add classes in checkboxes figure
     checkboxes.setAttribute('class','col-xs-1');
