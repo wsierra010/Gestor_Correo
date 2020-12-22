@@ -173,10 +173,6 @@ header{
     padding: 1px;
 }
 
-.header__searchDiv{
-    /* background-color: rgba(206,206,206,0.2); */
-}
-
 .header__search{
     width: 100%;
     border: none;
@@ -211,9 +207,6 @@ header{
     border-top: none;
     flex-direction: column;
 }
-.main__mailArticle:hover{
-    box-shadow: 3px 3px 5px rgba(87, 87, 87,0.3);
-}
 
 .star {
     visibility:hidden;
@@ -238,7 +231,6 @@ header{
     display: inline;
     font-family: 'Montserrat', sans-serif;
 }
-
 #first{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -326,6 +318,7 @@ aside{
     border-right: 1px solid rgba(87, 87, 87, 0.5);
     border-bottom: 1px solid rgba(87, 87, 87, 0.5);
 }
+
 .aside__sectionList li a{
     text-decoration: none;
     color: rgba(60,64,67,1);
@@ -380,9 +373,6 @@ aside{
 
 }
 
-.aside__sectionList li{
-    /* display: block; */
-}
 .aside__sectionList li:focus ul{display:block;}
 
 .aside__sectionList li:hover{
