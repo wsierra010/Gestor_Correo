@@ -3,6 +3,8 @@ const mainContainer = document.getElementById('main__container')
 // Array que guarda los mails en tipo objeto
 let ContMailBox = [];
 
+obtener();
+printMail();
 
 function articleMail(to, subject, textcontent){
     // Create general container
@@ -131,6 +133,7 @@ function createCompose(){
     const close = document.getElementById('close');
     close.addEventListener('click', exit);
 
+    // Button Close Window Modal
     function exit(){
         window.remove();
     }
@@ -151,14 +154,11 @@ function createCompose(){
             subject: subjectInput,
             textcontent: textareaInput
         }
+        capturar(MailContent);
+        saveLocalStorage();
         // console.log(MailContent);
 
-        capturar();
         // Function push object in ContMail Box Array
-        function capturar(){
-            // console.log('Dani Jimenez Maquina')
-            ContMailBox.push(MailContent);
-        }
         // console.log(ContMailBox);
 
         // Get Inputs information
@@ -168,20 +168,44 @@ function createCompose(){
 
         // Close Window Modal After click Send
         window.remove();
+        printMail();
 
-        // Empty mailBox Container
-        mails.innerHTML = "";
-        // Create iterator Foreach every time an object is created
-        ContMailBox.forEach(e => {
-            // console.log(e.textcontent, e.subject, e.to);
-            let variable = articleMail(e.to, e.subject, e.textcontent);
-            mails.appendChild(variable);
-            // console.log(variable);
-        });
     }
 
+    function capturar(){
+        // console.log('Dani Jimenez Maquina')
+        ContMailBox.push(MailContent);
+    }
+}           //          Finally Function Create Compose
 
+
+function printMail(){
+    // Empty mailBox Container
+    mails.innerHTML = "";
+    // Create iterator Foreach every time an object is created
+    ContMailBox.forEach(e => {
+    // console.log(e.textcontent, e.subject, e.to);
+    let variable = articleMail(e.to, e.subject, e.textcontent);
+    mails.appendChild(variable);
+    // console.log(variable);
+    });
 }
+
+function saveLocalStorage(){
+    let json = JSON.stringify(ContMailBox);
+
+    localStorage.setItem('mails', json);
+}
+
+function obtener(){
+
+    if(localStorage.getItem('mails')){
+        let json = localStorage.getItem('mails');
+
+        ContMailBox = JSON.parse(json);
+    }
+}
+
 
 
 
