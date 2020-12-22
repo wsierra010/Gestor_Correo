@@ -207,7 +207,9 @@ header{
     border-top: none;
     flex-direction: column;
 }
-
+.main__mailArticle:hover{
+    box-shadow: 3px 3px 10px rgba(190,180,170,0.5);
+}
 .star {
     visibility:hidden;
     /* display: none; */
