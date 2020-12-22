@@ -15,6 +15,7 @@ function articleMail(to, subject, textcontent, id){
     mailArticle.setAttribute('id','mail');
     mailArticle.classList.add('main__mailArticle');
     mailArticle.classList.add('col-xs-12');
+    // mailArticle.addEventListener('click' focusMail);
 
     // Create content in mailArticle
     const checkboxes = document.createElement('figure');
@@ -35,9 +36,10 @@ function articleMail(to, subject, textcontent, id){
         checkBox.addEventListener('click', deletMail);
         // star favorites checkbox
         star.setAttribute('type','checkbox');
-        star.setAttribute('id','favorites');
+        star.setAttribute('class','favorites');
         star.setAttribute('checked','true');
         star.classList.add('star');
+        // star.addEventListener('click', );
         // fixed checkbox
         fixed.setAttribute('type','checkbox');
         fixed.setAttribute('id','fixed');
@@ -161,7 +163,7 @@ function createCompose(){
             textcontent: textareaInput
         }
         capturar();
-        saveLocalStorage();
+        saveMailLocalStorage();
         // console.log(MailContent);
 
         // Function push object in ContMail Box Array
@@ -182,7 +184,7 @@ function createCompose(){
         // console.log('Dani Jimenez Maquina')
         ContMailBox.push(MailContent);
     }
-}           //          Finally Function Create Compose
+}                                                                            //          Finally Function Create Compose
 
 
 function printMail(){
@@ -197,7 +199,7 @@ function printMail(){
     });
 }
 
-function saveLocalStorage(){
+function saveMailLocalStorage(){
     let json = JSON.stringify(ContMailBox);
 
     localStorage.setItem('mails', json);
@@ -224,11 +226,5 @@ function deletMail(event){
         }
     });
     printMail();
-    saveLocalStorage();
+    saveMailLocalStorage();
 }
-
-
-
-
-
-

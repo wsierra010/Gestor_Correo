@@ -206,6 +206,7 @@ header{
     padding: 5px 0;
     border-top: none;
     flex-direction: column;
+    cursor: pointer;
 }
 .main__mailArticle:hover{
     box-shadow: 3px 3px 10px rgba(190,180,170,0.5);
