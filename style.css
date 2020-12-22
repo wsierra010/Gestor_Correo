@@ -226,6 +226,23 @@ header{
 .star:checked:before {
     content: "\2606";
 }
+.delete {
+    visibility:hidden;
+    /* display: none; */
+    font-size:25px;
+    color: rgba(87, 87, 87, 0.5);
+    cursor:pointer;
+}.delete:before {
+    content: "\2718";
+    visibility:visible;
+    position: relative;
+    top: -100%;
+    left: -31%;
+}
+.delete:active:before {
+    content: "\2718";
+    color: rgba(44, 44, 44, 0.651) ;
+}
 
 .text{
     font-weight: 600;
@@ -300,7 +317,7 @@ header{
     border: none;
 }
 .sendButton{
-    background-color: rgba(138, 37, 211,0.9);
+    background-color: rgb(138, 37, 211);
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     width: 8em;

@@ -1,3 +1,4 @@
+var contador = 0;
 const mails = document.getElementById('mailbox');
 const mainContainer = document.getElementById('main__container')
 // Array que guarda los mails en tipo objeto
@@ -6,7 +7,8 @@ let ContMailBox = [];
 obtener();
 printMail();
 
-function articleMail(to, subject, textcontent){
+function articleMail(to, subject, textcontent, id){
+
     // Create general container
     const mailArticle = document.createElement('article');
     // Add Clases and Id in MailArticle
@@ -28,7 +30,9 @@ function articleMail(to, subject, textcontent){
     checkboxes.setAttribute('class','col-xs-1');
         // checkbox
         checkBox.setAttribute('type','checkbox');
-        checkBox.setAttribute('id','checked');
+        checkBox.setAttribute('value',id);
+        checkBox.classList.add('delete');
+        checkBox.addEventListener('click', deletMail);
         // star favorites checkbox
         star.setAttribute('type','checkbox');
         star.setAttribute('id','favorites');
@@ -144,17 +148,19 @@ function createCompose(){
 
     // Function Create Object Mail
     function Mail(){
+        contador++;
         const toInput = document.getElementById('toInput').value;
         const subjectInput = document.getElementById('subjectInput').value;
         const textareaInput = document.getElementById('textareaInput').value;
 
         // Object
         MailContent={
+            id: contador,
             to: toInput,
             subject: subjectInput,
             textcontent: textareaInput
         }
-        capturar(MailContent);
+        capturar();
         saveLocalStorage();
         // console.log(MailContent);
 
@@ -185,7 +191,7 @@ function printMail(){
     // Create iterator Foreach every time an object is created
     ContMailBox.forEach(e => {
     // console.log(e.textcontent, e.subject, e.to);
-    let variable = articleMail(e.to, e.subject, e.textcontent);
+    let variable = articleMail(e.to, e.subject, e.textcontent,e.id);
     mails.appendChild(variable);
     // console.log(variable);
     });
@@ -195,16 +201,33 @@ function saveLocalStorage(){
     let json = JSON.stringify(ContMailBox);
 
     localStorage.setItem('mails', json);
+    localStorage.setItem('contador',contador);
 }
 
 function obtener(){
 
     if(localStorage.getItem('mails')){
         let json = localStorage.getItem('mails');
+        contador = localStorage.getItem('contador');
 
         ContMailBox = JSON.parse(json);
+
     }
 }
+
+function deletMail(event){
+    ContMailBox.forEach((e,i) => {
+        // console.log(event.target.value);
+        // console.log(e.id);
+        if(event.target.value == e.id){
+            ContMailBox.splice(i, 1);
+        }
+    });
+    printMail();
+    saveLocalStorage();
+}
+
+
 
 
 
